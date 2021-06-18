@@ -10,7 +10,7 @@ void main() {
     routes: {
       '/login_page': (context) => LoginPage(),
       '/home_page': (context) => HomePage(),
-      '/barcode_page': (context) => QrCode()
+      '/barcode_page': (context) => QrCode(),
     },
   ));
 }

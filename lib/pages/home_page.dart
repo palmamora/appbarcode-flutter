@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [_buttonReserva(), _buttonDespacho(), _buttonSalir()],
+          children: [_buttonReserva(), _buttonSalir()],
         ),
       ),
     ));
@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
         return Container(
           padding: EdgeInsets.symmetric(horizontal: 70, vertical: 15),
           child: ElevatedButton(
-            child: Text('Reserva'),
+            child: Text('Reserva/Despacho'),
             onPressed: () {
               Navigator.pushNamed(context, '/barcode_page');
             },
@@ -43,24 +43,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _buttonDespacho() {
-    return StreamBuilder(
-      builder: (context, snapshot) {
-        return Container(
-          padding: EdgeInsets.symmetric(horizontal: 70, vertical: 15),
-          child: ElevatedButton(
-            child: Text('Despacho'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/barcode_page');
-            },
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.blue),
-            ),
-          ),
-        );
-      },
-    );
-  }
+
 
   Widget _buttonSalir() {
     return StreamBuilder(
