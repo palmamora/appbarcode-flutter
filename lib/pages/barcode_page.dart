@@ -1,6 +1,5 @@
-import 'dart:convert';
-import 'dart:io';
 
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:http/http.dart' as http;
@@ -99,7 +98,7 @@ class _QrCodeState extends State<QrCode> {
   }
 
   Future<http.Response> enviar(String _data, String _tipo) async {
-    var url = Uri.parse('http://localhost/api.php');
+    var url = Uri.parse('http://palma.6te.net/api.php');
     var res = await http.post(url,
         body: jsonEncode(<String, String>{
           'tipo': _tipo,
