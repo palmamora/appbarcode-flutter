@@ -8,34 +8,79 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  static ButtonStyle _estiloBoton = ButtonStyle(
+      backgroundColor: MaterialStateProperty.all(Colors.black),
+      minimumSize: MaterialStateProperty.all(Size(240, 80)));
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text('Home Page'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [_buttonReserva(), _buttonSalir()],
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: ElevatedButton(
+                  child: Text('Reserva', textScaleFactor: 1.75),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/reserva_page');
+                  },
+                  style: _estiloBoton),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: ElevatedButton(
+                  child: Text('Despacho', textScaleFactor: 1.75),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/reserva_page');
+                  },
+                  style: _estiloBoton),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: ElevatedButton(
+                  child: Text('Devolución', textScaleFactor: 1.75),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/reserva_page');
+                  },
+                  style: _estiloBoton),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: ElevatedButton(
+                  child: Text('Tiempo en Bodega', textScaleFactor: 1.75),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/reserva_page');
+                  },
+                  style: _estiloBoton),
+            ),
+            _buttonSalir(),
+          ],
         ),
       ),
-    ));
+    );
   }
 
-  Widget _buttonReserva() {
+  Widget _button(String titulo) {
     return StreamBuilder(
       builder: (context, snapshot) {
         return Container(
-          padding: EdgeInsets.symmetric(horizontal: 70, vertical: 15),
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: ElevatedButton(
-            child: Text('Reserva/Despacho'),
+            child: Text(
+              titulo,
+              textScaleFactor: 1.75,
+            ),
             onPressed: () {
-              Navigator.pushNamed(context, '/barcode_page');
+              Navigator.pushNamed(context, '/reserva_page');
             },
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.blue),
+              backgroundColor: MaterialStateProperty.all(Colors.black),
+              minimumSize: MaterialStateProperty.all(Size(240, 80)),
             ),
           ),
         );
@@ -43,20 +88,22 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-
-
   Widget _buttonSalir() {
     return StreamBuilder(
       builder: (context, snapshot) {
         return Container(
-          padding: EdgeInsets.symmetric(horizontal: 70, vertical: 15),
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: ElevatedButton(
-            child: Text('Salir'),
+            child: Text(
+              'Salir',
+              textScaleFactor: 1.75,
+            ),
             onPressed: () {
               Navigator.pop(context);
             },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(Colors.red),
+              minimumSize: MaterialStateProperty.all(Size(150, 50)),
             ),
           ),
         );

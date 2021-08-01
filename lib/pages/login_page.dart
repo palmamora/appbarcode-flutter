@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
     return StreamBuilder(
       builder: (context, snapshot) {
         return Container(
-          padding: EdgeInsets.symmetric(horizontal: 70, vertical: 15),
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
           child: ElevatedButton(
             child: Text('Iniciar Sesión'),
             onPressed: () {
@@ -85,6 +85,8 @@ class _LoginPageState extends State<LoginPage> {
             },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(Colors.green),
+              minimumSize: MaterialStateProperty.all(Size(250, 50)),
+
             ),
           ),
         );
@@ -93,8 +95,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<http.Response> login() async {
-    var url = Uri.parse('http://localhost/api.php');
-    var res = await http.post(url, body: "'user':'manuel'");
+    var url = Uri.parse('http://palma.6te.net/api.php');
+    var res = await http.post(url, body: "'tipo':'manuel','code':'0001'");
     print(res.body);
     return res;
   }
