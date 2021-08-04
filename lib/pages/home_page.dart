@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
               child: ElevatedButton(
                   child: Text('Despacho', textScaleFactor: 1.75),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/reserva_page');
+                    Navigator.pushNamed(context, '/despacho_page');
                   },
                   style: _estiloBoton),
             ),
@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
               child: ElevatedButton(
                   child: Text('Devolución', textScaleFactor: 1.75),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/reserva_page');
+                    Navigator.pushNamed(context, '/devolucion_page');
                   },
                   style: _estiloBoton),
             ),
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
               child: ElevatedButton(
                   child: Text('Tiempo en Bodega', textScaleFactor: 1.75),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/reserva_page');
+                    Navigator.pushNamed(context, '/tiempo_en_bodega_page');
                   },
                   style: _estiloBoton),
             ),

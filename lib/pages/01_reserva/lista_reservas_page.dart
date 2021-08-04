@@ -26,7 +26,6 @@ class _ListaReservasPageState extends State<ListaReservasPage> {
                 CircularProgressIndicator(),
                 Text(
                   '\n   Cargando...',
-                  style: TextStyle(color: Colors.red),
                 )
               ],
             ));

@@ -2,7 +2,7 @@
     package="com.example.appbarcode">
     <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="appbarcode"
+        android:label="BarronVieyraApp"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
