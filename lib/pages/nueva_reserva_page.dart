@@ -95,7 +95,7 @@ class _NuevaReservaPageState extends State<NuevaReservaPage> {
   }
 
   void _sendCodes(List<String> codes) async {
-    var url = Uri.parse('http://127.0.0.1/api.php');
+    var url = Uri.parse('http://palma.6te.net/api.php');
     var res = await http.post(url,
         body: jsonEncode(<String, String>{
           'tipo': 'nueva reserva despacho',
@@ -123,7 +123,7 @@ class _NuevaReservaPageState extends State<NuevaReservaPage> {
                 ],
               ),
             ),
-          ).;
+          );
         });
   }
 }
